@@ -4,12 +4,18 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity(tableName = "users")
-data class User(
+@Entity(tableName = "ToDo")
+data class ToDo(
     @PrimaryKey
     @ColumnInfo(name = "uuid")
-    val uuid: String,
+    var uuid: String,
     @ColumnInfo(name = "taskName")
-    val taskName: String,
+    var taskName: String,
+    @ColumnInfo(name = "taskCreater")
+    var taskCreater: String,
     @ColumnInfo(name = "taskDescription")
-    val taskDescription: String)
+    var taskDescription: String)
+
+
+
+
