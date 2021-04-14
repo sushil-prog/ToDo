@@ -8,4 +8,21 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="black_0">#3A3837</color>
+
+
+
+<!--    For Shrine theme-->
+    <color name="colorPrimary">#2A2E49</color>
+    <color name="colorPrimaryDark">#20232B</color>
+    <color name="colorAccent">#2E3036</color>
+
+    <!--    <color name="colorPrimaryDark">#4E0D3A</color>-->
+    <!--    <color name="purple_light">#5D1049</color>-->
+    <!--    <color name="colorAccent">#720D5D</color>-->
+
+    <color name="textColorPrimary">@color/white</color>
+    <color name="textColorPrimary2">#442C2E</color>
+
+
+
 </resources>

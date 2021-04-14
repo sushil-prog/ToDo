@@ -1,9 +1,12 @@
 package com.aiegroup.todo.models
 
+import android.os.Parcelable
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import kotlinx.android.parcel.Parcelize
 
+@Parcelize
 @Entity(tableName = "ToDo")
 data class ToDo(
     @PrimaryKey
@@ -14,7 +17,7 @@ data class ToDo(
     @ColumnInfo(name = "taskCreater")
     var taskCreater: String,
     @ColumnInfo(name = "taskDescription")
-    var taskDescription: String)
+    var taskDescription: String): Parcelable
 
 
 

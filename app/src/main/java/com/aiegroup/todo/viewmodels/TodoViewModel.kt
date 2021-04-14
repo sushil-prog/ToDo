@@ -1,16 +1,19 @@
 package com.aiegroup.todo.viewmodels
 
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.aiegroup.todo.models.ToDo
 import com.aiegroup.todo.repo.Repository
 import kotlinx.coroutines.launch
+import java.util.*
 
 class TodoViewModel(private val repository: Repository) : ViewModel() {
 
 
     var items: LiveData<List<ToDo>>? = null;
+    lateinit var editableTodoItem: MutableLiveData<ToDo>
 
 
     /**
@@ -28,6 +31,15 @@ class TodoViewModel(private val repository: Repository) : ViewModel() {
         viewModelScope.launch {
             items = repository.getTaskItems();
         }
+    }
+
+    /**
+     * init mutable todo item for creating new one
+     */
+    fun initEditableToDoItem() {
+        var toDoItem  = ToDo(UUID.randomUUID().toString(), "", "", "Test Task ");
+        editableTodoItem.postValue(toDoItem)
+
     }
 
     /**

@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -45,25 +44,19 @@ class TodoListFragment : Fragment() {
 
     private var _binding: FragmentTodoListBinding? = null
 
-    fun onSearchClick(v: View?) {
-        Toast.makeText(activity, "X", Toast.LENGTH_SHORT).show()
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
         _binding = FragmentTodoListBinding.inflate(inflater, container, false)
-
-
         var view = _binding!!.root
         _binding!!.fabAddTask.setOnClickListener(object : View.OnClickListener {
             override fun onClick(v: View?) {
-                var todo =
-                    ToDo(UUID.randomUUID().toString(), "New Task", "Sushil Kumar", "Test Task ");
-                viewModel.createToDo(todo);
-
+//                var todo =
+//                    ToDo(UUID.randomUUID().toString(), "New Task", "Sushil Kumar", "Test Task ");
+//                viewModel.createToDo(todo);
+                openBottomSheet(null)
 
             }
 
@@ -72,6 +65,7 @@ class TodoListFragment : Fragment() {
             // When todos item is clicked this block or lambda will be called by DevByteAdapter
             // context is not around, we can safely discard this click since the Fragment is no
             // longer on the screen
+            openBottomSheet(it)
 
         })
 
@@ -81,6 +75,17 @@ class TodoListFragment : Fragment() {
         }
         //
         return view
+    }
+
+    fun openBottomSheet(toDo: ToDo?) {
+        val modalbottomSheetFragment = AddEditToDoItemBottomSheetFragment.newInstance(toDo)
+        activity?.let { it1 ->
+            modalbottomSheetFragment.show(
+                it1.supportFragmentManager,
+                modalbottomSheetFragment.tag
+            )
+        }
+
     }
 
     /**
@@ -110,7 +115,6 @@ class TodoListFragment : Fragment() {
     class TaskItemClick(val block: (ToDo) -> Unit) {
         /**
          * Called when a item is clicked
-         *
          * @param todo item
          */
         fun onClick(video: ToDo) = block(video)

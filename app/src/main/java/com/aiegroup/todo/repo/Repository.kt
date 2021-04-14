@@ -15,7 +15,7 @@ class Repository(private val toDoDao: ToDoDao) {
         toDoDao.createTask(todo);
     }
 
-//    suspend fun delete(todo: ToDo) {
-////        toDoDao.delete(todo);
-//    }
+    suspend fun delete(todo: ToDo) {
+         toDoDao.delete(todo);
+    }
 }
