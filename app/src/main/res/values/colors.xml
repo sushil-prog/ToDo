@@ -22,7 +22,7 @@
 
     <color name="textColorPrimary">@color/white</color>
     <color name="textColorPrimary2">#442C2E</color>
-
+    <color name="red">#F44336</color>
 
 
 </resources>

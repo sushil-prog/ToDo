@@ -6,9 +6,19 @@
     <string name="second_fragment_label">Second Fragment</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
-
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="creater_name">Creater Name</string>
     <string name="title">Task Name</string>
+    <string name="error">"Record already exist with same task name and time "</string>
+    <string name="error_empty_value">Task name and task creater can not be empty</string>
+    <string name="delete">Delete</string>
+    <string name="task">Tasks</string>
+    <string name="notification_title">ToDo Notification</string>
+    <string name="online">Online</string>
+    <string name="offline">Offline</string>
+    <string name="network_status_title">ToDo Network Status</string>
+    <string name="no_task">No task Found. Press + button to add new task</string>
+    <string name="error_past_time">"Past time not allowed "</string>
+    <string name="date_time">Date &amp; Time</string>
 </resources>

@@ -18,7 +18,9 @@ class ViewModelProviderFactory(val context: Context) :
     }
 
     private lateinit var INSTANCE: ToDoDatabase
-
+    /**
+       build instance of task databse ( room db instance )
+     */
     private fun getDatabase(context: Context): ToDoDatabase {
         synchronized(ToDoDatabase::class.java) {
             if (!::INSTANCE.isInitialized) {
